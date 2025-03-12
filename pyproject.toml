@@ -1,0 +1,23 @@
+[project]
+name = "accountability_partner"
+version = "0.1.0"
+description = "Accountability_Partner using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.105.0,<1.0.0"
+]
+
+[project.scripts]
+accountability_partner = "accountability_partner.main:run"
+run_crew = "accountability_partner.main:run"
+train = "accountability_partner.main:train"
+replay = "accountability_partner.main:replay"
+test = "accountability_partner.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
