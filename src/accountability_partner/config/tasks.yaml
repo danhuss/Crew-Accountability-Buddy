@@ -15,3 +15,46 @@ reporting_task:
     A fully fledged report with the main topics, each with a full section of information.
     Formatted as markdown without '```'
   agent: reporting_analyst
+
+initial_assessment_task:
+  description: >
+    Conduct an initial assessment of the human's goals, current situation, and potential obstacles.
+    Ask targeted questions to understand:
+    1. What specific goals they want to achieve
+    2. Their timeline for achieving these goals
+    3. Past challenges they've faced in achieving similar goals
+    4. Their motivation level and commitment
+    5. Available resources and support systems
+    
+    Create a structured goal document with SMART goals, milestones, and key metrics for tracking progress.
+  expected_output: >
+    A comprehensive assessment report with structured goals and initial plan.
+  agent: coach_agent
+
+progress_monitoring_task:
+  description: >
+    Design a progress tracking system for the human's specific goals.
+    This should include:
+    1. Key metrics to track (both quantitative and qualitative)
+    2. Frequency of check-ins
+    3. How progress will be recorded and visualized
+    4. Thresholds for interventions if progress falls behind expectations
+    
+    Set up the initial tracking document and explain to the human how to provide updates.
+  expected_output: >
+    A progress tracking system with clear metrics and reporting guidelines.
+  agent: tracker_agent
+
+accountability_system_task:
+  description: >
+    Integrate all the components (assessment, tracking, expert advice, reflection) into
+    a cohesive accountability system. Explain to the human:
+    1. How the system works as a whole
+    2. Their responsibilities in the partnership
+    3. How to get the most value from each component
+    4. How to troubleshoot if they face challenges
+    
+    Create a user guide that the human can reference when using the system.
+  expected_output: >
+    A comprehensive user guide for the complete accountability system.
+  agent: coach_agent
