@@ -18,35 +18,46 @@ class AccountabilityPartner():
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
 	@agent
-	def researcher(self) -> Agent:
+	def coach_agent(self) -> Agent:
 		return Agent(
-			config=self.agents_config['researcher'],
-			verbose=True
+			config=self.agents_config['coach_agent'],
+			verbose=True,
+			allow_delegation=True
 		)
-
+	
 	@agent
-	def reporting_analyst(self) -> Agent:
+	def tracker_agent(self) -> Agent:
 		return Agent(
-			config=self.agents_config['reporting_analyst'],
-			verbose=True
+			config=self.agents_config['tracker_agent'],
+			verbose=True,
+			allow_delegation=False
+		)
+	
+	@agent
+	def expert_agent(self) -> Agent:
+		return Agent(
+			config=self.agents_config['expert_agent'],
+			verbose=True,
+			allow_delegation=False
+		)
+	
+	@agent
+	def reflection_agent(self) -> Agent:
+		return Agent(
+			config=self.agents_config['reflection_agent'],
+			verbose=True,
+			allow_delegation=False
 		)
 
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
 	# https://docs.crewai.com/concepts/tasks#overview-of-a-task
 	@task
-	def research_task(self) -> Task:
+	def initial_assessment_task(self) -> Task:
 		return Task(
-			config=self.tasks_config['research_task'],
+			config=self.tasks_config['initial_assessment_task'],
 		)
-
-	@task
-	def reporting_task(self) -> Task:
-		return Task(
-			config=self.tasks_config['reporting_task'],
-			output_file='report.md'
-		)
-
+	
 	@crew
 	def crew(self) -> Crew:
 		"""Creates the AccountabilityPartner crew"""
@@ -59,4 +70,8 @@ class AccountabilityPartner():
 			process=Process.sequential,
 			verbose=True,
 			# process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
+			# planning=True,
+			# manager_agent=an_agent,
+			# manager_llm=some_llm,
+			# knowledge_sources=[],
 		)
