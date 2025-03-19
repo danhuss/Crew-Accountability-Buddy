@@ -20,7 +20,7 @@ def run():
     inputs = {
         'topic': 'AI LLMs',
         'current_year': str(datetime.now().year),
-        'today': str(datetime.now().date())
+        'today': str(datetime.now().date()),
     }
     
     try:

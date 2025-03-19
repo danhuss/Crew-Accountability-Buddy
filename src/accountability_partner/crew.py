@@ -1,9 +1,13 @@
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
+
+from accountability_partner.tools.HumanInputTool import HumanInputTool
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
+
+human_tool = HumanInputTool()
 
 @CrewBase
 class AccountabilityPartner():
@@ -22,7 +26,8 @@ class AccountabilityPartner():
 		return Agent(
 			config=self.agents_config['coach_agent'],
 			verbose=True,
-			allow_delegation=True
+			allow_delegation=True,
+			tools=[human_tool]
 		)
 	
 	@agent
@@ -56,6 +61,7 @@ class AccountabilityPartner():
 	def initial_assessment_task(self) -> Task:
 		return Task(
 			config=self.tasks_config['initial_assessment_task'],
+			human_input=True,
 		)
 	
 	@crew
