@@ -30,29 +30,29 @@ class AccountabilityPartner():
 			tools=[human_tool]
 		)
 	
-	@agent
-	def tracker_agent(self) -> Agent:
-		return Agent(
-			config=self.agents_config['tracker_agent'],
-			verbose=True,
-			allow_delegation=False
-		)
+	# @agent
+	# def tracker_agent(self) -> Agent:
+	# 	return Agent(
+	# 		config=self.agents_config['tracker_agent'],
+	# 		verbose=True,
+	# 		allow_delegation=False
+	# 	)
 	
-	@agent
-	def expert_agent(self) -> Agent:
-		return Agent(
-			config=self.agents_config['expert_agent'],
-			verbose=True,
-			allow_delegation=False
-		)
+	# @agent
+	# def expert_agent(self) -> Agent:
+	# 	return Agent(
+	# 		config=self.agents_config['expert_agent'],
+	# 		verbose=True,
+	# 		allow_delegation=False
+	# 	)
 	
-	@agent
-	def reflection_agent(self) -> Agent:
-		return Agent(
-			config=self.agents_config['reflection_agent'],
-			verbose=True,
-			allow_delegation=False
-		)
+	# @agent
+	# def reflection_agent(self) -> Agent:
+	# 	return Agent(
+	# 		config=self.agents_config['reflection_agent'],
+	# 		verbose=True,
+	# 		allow_delegation=False
+	# 	)
 
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
