@@ -27,7 +27,7 @@ class AccountabilityPartner():
 			config=self.agents_config['coach_agent'],
 			verbose=True,
 			allow_delegation=True,
-			tools=[human_tool]
+			# tools=[human_tool]
 		)
 	
 	# @agent
@@ -62,6 +62,7 @@ class AccountabilityPartner():
 		return Task(
 			config=self.tasks_config['initial_assessment_task'],
 			human_input=True,
+			output_file='knowledge/goal.md'
 		)
 	
 	@crew

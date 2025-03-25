@@ -2,13 +2,12 @@ initial_assessment_task:
   description: >
     Conduct an initial assessment of the human's goals, current situation, and potential obstacles.
     Ask targeted questions to understand:
-    1. What specific goals they want to achieve
-    2. Their timeline for achieving these goals
-    3. Past challenges they've faced in achieving similar goals
-    4. Their motivation level and commitment
-    5. Available resources and support systems
+    1. What specific goals they want to achieve and their timeline for achieving these goals
+    2. Past challenges they've faced in achieving similar goals
+    3. Their motivation level and commitment
+    4. Available resources and support systems
     
-    Once you have all the information needed, create a structured goal document with SMART 
+    Only ask a maximum of 4 questions. Once you have all the information needed, create a structured goal document with SMART 
     goals, milestones, and key metrics for tracking progress. 
   expected_output: >
     A comprehensive assessment report with structured goals and initial plan. Format this document as a 
